@@ -21,6 +21,21 @@ sends the logs to the backend (e.g. Loki).
 - **Mimir**: Metrics storage and querying.
 - **PostgreSQL**: Database for application data.
 
+
+## Architecture
+```mermaid
+graph TD
+    A[Spring Boot Application]
+    A -->|Logs, Metrics, and Traces| C[OpenTelemetry SDK]
+    C -->|Logs, Metrics, and Traces| E[OpenTelemetry Collector]
+    E -->|Logs| D[Loki]
+    E -->|Metrics| F[Mimir]
+    E -->|Traces| G[Tempo]
+    D -->|Logs| H[Grafana]
+    F -->|Metrics| H
+    G -->|Traces| H
+```
+
 ## Prerequisites
 
 Ensure you have the following installed:
