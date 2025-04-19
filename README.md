@@ -89,11 +89,15 @@ The `docker-compose.yml` file defines the following services:
 
 - **otel-collector**: OpenTelemetry Collector for processing telemetry data.
 - **grafana**: Visualization platform.
+![grafana.png](docs/grafana.png)
 - **loki**: Centralized logging.
+![loki.png](docs/loki.png)
 - **tempo**: Distributed tracing.
+![tempo.png](docs/tempo.png)
 - **mimir**: Metrics storage.
+![mimir.png](docs/mimir.png)
 - **db**: PostgreSQL database.
-
+![postgres.png](docs/postgres.png)
 ## Development
 
 ### Build the Project
