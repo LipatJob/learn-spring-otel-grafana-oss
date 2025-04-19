@@ -2,6 +2,16 @@
 
 This project demonstrates how to integrate OpenTelemetry with a Spring Boot application and visualize telemetry data using Grafana OSS. It includes services for distributed tracing, metrics, and logging.
 
+## Thoughts
+
+I was trying to experiment with using structured logs using `logstash-logback-encoder`,
+but it seems that `opentelemetry-spring-boot-starter` does not support logstash layouts yet. 
+Therefore, when the Open Telemetry sdk sends the logs to the collector, the logs are using the default layout.
+
+In my opinion, logs should be using a pull based approach anyway so this should be fine.
+By pull based I mean that the logs should be written to stdout, then a log collector agent (e.g., Fluentd, Fluent Bit, or OpenTelemetry Collector)
+sends the logs to the backend (e.g. Loki).
+
 ## Features
 
 - **OpenTelemetry Integration**: Collect traces and metrics from the Spring Boot application.
