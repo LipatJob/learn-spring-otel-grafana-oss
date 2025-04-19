@@ -35,7 +35,7 @@ Ensure you have the following installed:
 
 3. **Run the Application**:
    ```bash
-   ./gradlew bootRun
+   ./gradlew bootRun --args='--spring.profiles.active=local'
    ```
 
 4. **Access Grafana**:
